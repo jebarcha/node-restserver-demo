@@ -4,7 +4,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 
-app.use(require('./routes/usuario'));
+// Configuraion de rutas:
+app.use(require('./routes/index'));
 
 /// mongoose.connect('mongodb://localhost:27017/cafe', { useNewUrlParser: true, useCreateIndex: true }, (err, res) => {
 mongoose.connect(process.env.URLDB, { useNewUrlParser: true, useCreateIndex: true }, (err, res) => {
