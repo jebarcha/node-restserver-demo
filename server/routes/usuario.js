@@ -57,7 +57,7 @@ app.post('/usuario', [verificaToken, verificaAdmin_Role], (req, res) => {
 
     usuario.save((err, usuarioDB) => {
         if (err) {
-            res.status(400).json({ ok: false, mensaje: err });
+            res.status(400).json({ ok: false, err });
             return;
         }
 
@@ -87,7 +87,7 @@ app.put('/usuario/:id', [verificaToken, verificaAdmin_Role], (req, res) => {
     });
 });
 
-app.delete('/usuario/:id', verificaToken, (req, res) => {
+app.delete('/usuario/:id', [verificaToken, verificaAdmin_Role], (req, res) => {
     // res.json('delete Usuario');
     let id = req.params.id;
 
@@ -99,7 +99,7 @@ app.delete('/usuario/:id', verificaToken, (req, res) => {
 
     Usuario.findByIdAndUpdate(id, cambiaEstado, { new: true }, (err, usuarioBorrado) => {
         if (err) {
-            res.status(400).json({ ok: false, mensaje: err });
+            res.status(400).json({ ok: false, err });
             return;
         }
 
