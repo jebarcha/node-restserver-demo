@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!-- <img src="http://localhost:3000/imagen/usuarios/5d0810f07c65324f96e40dc6-796.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InJvbGUiOiJBRE1JTl9ST0xFIiwiZXN0YWRvIjp0cnVlLCJnb29nbGUiOmZhbHNlLCJfaWQiOiI1ZDA4MTBmMDdjNjUzMjRmOTZlNDBkYzYiLCJub21icmUiOiJqZXN1cyIsImVtYWlsIjoidGVzdDFAdGVzdC5jb20iLCJfX3YiOjB9LCJpYXQiOjE1NjEwNDc2NDgsImV4cCI6MTU2MTIyMDQ0OH0.cDw5SCh8ZrUW80q6rnWmtsUiTj0ml9ii_2syrHvxiz8" alt=""> -->
 
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <a href="#" onclick="signOut();">Sign out</a>
@@ -35,6 +36,7 @@
             var id_token = googleUser.getAuthResponse().id_token;
 
             console.log(id_token);
+            x ``
 
             var xhr = new XMLHttpRequest();
             xhr.open('POST', '/google');
